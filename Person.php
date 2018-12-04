@@ -10,6 +10,11 @@ class Person{
         $this->name = $name;
     }
 
+    public function getAge()
+    {
+        return $this->age * 365;
+    }
+
     public function setAge($age)
     {
         if($age < 18)   
@@ -23,7 +28,7 @@ class Person{
 }
 
 $john = new Person('John Doe');
-$john->setAge(17);
+$john->setAge(30);
 
 
-var_dump($john);
+var_dump($john->getAge());
