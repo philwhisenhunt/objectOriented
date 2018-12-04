@@ -1,37 +1,47 @@
 <?php
+class Person {
 
-class Person{
-    private $name;
-
-    private $age;
+    protected $name;
 
     public function __construct($name)
     {
         $this->name = $name;
     }
 
-    public function getAge()
+}
+
+class Business {
+    protected $staff;
+
+
+    public function __construct (Staff $staff)
     {
-        return $this->age * 365;
+        $this->staff = $staff;
     }
 
-    public function setAge($age)
+    public function hire(Person $person)
     {
-        if($age < 18)   
-        {
-            throw new Exception("Person is not old enough.");
-        }
-        
-        $this->age = $age;
+        $this->staff->add($person);
+
+    }
+}
+
+class Staff {
+    protected $members = [];
+
+    public function add(Person $person)
+    {
+        $this->members[] = $person;
     }
 
 }
 
-$john = new Person('John Doe');
+$jeffrey = new Person('Jeffrey Way'); 
 
-$john->setAge(30);
+$staff = new Staff;
 
-$john->age = 8;
+$laracasts = new Business($staff);
 
+$laracasts->hire($jeffrey);
 
-var_dump($john->getAge());
+var_dump($staff);
