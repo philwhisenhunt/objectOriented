@@ -14,7 +14,7 @@ class LogToFile implements Logger{
 class LogToDatabase implements Logger{
     public function execute($message)
     {
-        var_dump('log the message to a database');
+        var_dump('log the message to a database: '. $message);
     }
 }
 
@@ -34,7 +34,7 @@ class UsersController {
     }
 }
 
-$controller = new UsersController(new LogToFile);
+$controller = new UsersController(new LogToDatabase);
 
 //Send a message to the logger. 
 $controller->show();
