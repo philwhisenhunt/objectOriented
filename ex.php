@@ -1,6 +1,6 @@
 <?php
 
-use Acme\Person;
+use Acme\Users\Person;
 use Acme\Business;
 use Acme\Staff;
 

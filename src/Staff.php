@@ -2,6 +2,8 @@
 
 namespace Acme;
 
+use Acme\Users\Person;
+
 class Staff {
     protected $members = [];
 
