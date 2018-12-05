@@ -1,12 +1,12 @@
 <?php
 
 
-$jeffrey = new Person('Jeffrey Way'); 
+$jeffrey = new Acme\Person('Jeffrey Way'); 
 
-$staff = new Staff([$jeffrey]);
+$staff = new Acme\Staff([$jeffrey]);
 
-$laracasts = new Business($staff);
+$laracasts = new Acme\Business($staff);
 
-$laracasts->hire(new Person('Jane Doe'));
+$laracasts->hire(new Acme\Person('Jane Doe'));
 
 var_dump($laracasts->getStaffMembers());
