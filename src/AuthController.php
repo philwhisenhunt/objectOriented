@@ -13,16 +13,18 @@ class AuthController {
 
     public function register()
     {
-        $this->$registration->execute([], $this);
+        $this->registration->execute([], $this);
+
     }
 
     public function userRegisteredSuccessfully()
     {
-
+        var_dump('created successfully. Redirect somewhere');
     }
 
     public function userRegisteredFailed()
     {
+        var_dump('created unsuccessfully. Redirect back');
 
     }
 }
